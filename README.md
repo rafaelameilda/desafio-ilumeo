@@ -44,3 +44,10 @@ npm run test:cov
 ```
 
 O frontend estará disponível na URL: `http://localhost:3001`
+
+
+![image](https://github.com/user-attachments/assets/d2396d2b-89cb-437e-9fef-38aa2a990bd7)
+
+![image](https://github.com/user-attachments/assets/2d8b4c7e-5cd9-4349-96bd-009c0c1776be)
+
+
