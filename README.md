@@ -50,4 +50,5 @@ O frontend estará disponível na URL: `http://localhost:3001`
 
 ![image](https://github.com/user-attachments/assets/2d8b4c7e-5cd9-4349-96bd-009c0c1776be)
 
+![image](https://github.com/user-attachments/assets/3653d295-774b-47d0-9bff-9b24b144c7d3)
 
