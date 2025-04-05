@@ -19,13 +19,16 @@ ENV NODE_ENV=${NODE_ENV}
 WORKDIR /usr/src/app
 
 # Instalar cliente do PostgreSQL
-RUN apk add --no-cache postgresql-client
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+  && apk update \
+  && apk add --no-cache postgresql16-client
 
 # Copiar arquivos da etapa de build com permissões apropriadas
 COPY --chown=appuser:appgroup --from=builder /usr/src/app/dist ./dist
 COPY --chown=appuser:appgroup --from=builder /usr/src/app/package*.json ./
 COPY --chown=appuser:appgroup --from=builder /usr/src/app/dist/data-source.js ./dist/data-source.js
 COPY --chown=appuser:appgroup --from=builder /usr/src/app/docker-entrypoint.sh ./docker-entrypoint.sh
+COPY ./backup.dump ./backup.dump
 
 # Instalar apenas as dependências de produção
 RUN npm ci --only=production
