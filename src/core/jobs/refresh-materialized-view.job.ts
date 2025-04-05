@@ -14,9 +14,9 @@ export class RefreshMaterializedViewJob {
         `REFRESH MATERIALIZED VIEW inside.mv_conversion_by_channel`,
       )
 
-      this.logger.log('✅ Materialized view refreshed with success.')
+      this.logger.log('✅ Materialized View refreshed with success.')
     } catch (error) {
-      console.error('Error for refresh MaterializedView:', error)
+      this.logger.error('❌ Error for refresh Materialized View', error.stack)
     }
   }
 }
