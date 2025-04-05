@@ -1,7 +1,9 @@
-import { Module } from '@nestjs/common';
+import { Module } from '@nestjs/common'
+
+import { UserSurveyResponseRepository } from './user-survey-response/user-survey-response.repository'
 
 @Module({
-  providers: [],
-  exports: [],
+  providers: [UserSurveyResponseRepository],
+  exports: [UserSurveyResponseRepository],
 })
 export class RepositoriesModule {}

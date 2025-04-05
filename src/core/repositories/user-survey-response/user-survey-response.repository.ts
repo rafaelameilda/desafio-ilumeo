@@ -7,11 +7,25 @@ export interface EvolutionRateParams {
   endDate?: string
 }
 
+export enum ChannelOrigin {
+  EMAIL = 'email',
+  MOBILE = 'MOBILE',
+  WPP = 'wpp',
+}
+
+export interface UserSurveyResponse {
+  origin: string
+  response_date: string
+  total_responses: string | number
+  total_converted: string | number
+  conversion_rate: string | number
+}
+
 @Injectable()
-export class SaleRepository {
+export class UserSurveyResponseRepository {
   constructor(private readonly dataSource: DataSource) {}
 
-  async getEvolutionRate(params: EvolutionRateParams) {
+  async getEvolutionRate(params: EvolutionRateParams): Promise<UserSurveyResponse[]> {
     const { origin, startDate, endDate } = params
 
     const query = this.dataSource
